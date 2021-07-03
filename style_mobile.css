@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+
+#img1 {
+  width: 100%;
+  position: relative;
+}
+
+#header {
+  writing-mode: horizontal-tb;
+}
+
+#border {
+  text-align: center;
+  font-size: 400%;
+  float: bottom;
+  writing-mode: horizontal-tb;
+  margin: 1.5%;
+}
+
+button {
+  font-size: 100%;
+
+}
+
+#prev {
+  margin: 6% 0 0 0;
+}
+
+#next {
+  margin: 3%;
+}
