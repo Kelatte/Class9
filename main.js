@@ -1,7 +1,9 @@
 var urlpre;
-var urlsuf = '.jpg';
-var urlsufMob1 = ".jpg?x-oss-process=image/crop,x_0,y_0,w_1570,h_2255"
-var urlsufMob2 = ".jpg?x-oss-process=image/crop,x_1500,y_0,w_1570,h_2255"
+var urlsuf = '.jpg?x-oss-process=image/rotate,270';
+var urlsufBook1Mob1 = ".jpg?x-oss-process=image/rotate,270/crop,x_0,y_0,w_1585,h_2131";
+var urlsufBook1Mob2 = ".jpg?x-oss-process=image/rotate,270/crop,x_1521,y_0,w_1570,h_2131";
+var urlsufBook2Mob1 = ".jpg?x-oss-process=image/rotate,270/crop,x_0,y_0,w_1570,h_2255";
+var urlsufBook2Mob2 = ".jpg?x-oss-process=image/rotate,270/crop,x_1500,y_0,w_1570,h_2255";
 
 var img1 = document.getElementById('img1');
 var preLoadNum = 3;
@@ -21,20 +23,28 @@ var bookId = getId("bookId");
 if (bookId == 1) {
 	urlpre = '//class9.oss-cn-hongkong.aliyuncs.com/ClassDiaryOnline/resources/book1/';
 	document.getElementById('header').textContent = "玖班班级日志<一>"
-	numPages = 2;
+	numPages = 98;
 } else {
 	urlpre = '//class9.oss-cn-hongkong.aliyuncs.com/ClassDiaryOnline/resources/book2/';
 	document.getElementById('header').textContent = "玖班班级日志<二>"
-	numPages = 2;
+	numPages = 82;
 }
 
 function GetPageURL(page) {
 	if (isPc) {
 		return urlpre + page + urlsuf;
 	} else if (page % 2 == 1) {
-		return urlpre + Math.ceil(page/2) + urlsufMob1;
+		if (bookId == 1) {
+			return urlpre + Math.ceil(page/2) + urlsufBook1Mob1;
+		} else {
+			return urlpre + Math.ceil(page/2) + urlsufBook1Mob2;
+		}
 	} else {
-		return urlpre + Math.ceil(page/2) + urlsufMob2;
+		if (bookId == 2) {
+			return urlpre + Math.ceil(page/2) + urlsufBook2Mob1;
+		} else {
+			return urlpre + Math.ceil(page/2) + urlsufBook2Mob2;
+		}
 	}
 }
 function LoadPage(page) {
