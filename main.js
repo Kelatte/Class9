@@ -164,7 +164,7 @@ if (isPc) {
 
 document.getElementById('page_count').textContent = numPages;
 RenderPage(pageNum);
-for (var i = 1; i <= preLoadNum; i++) {
+for (var i = 1; i <= preLoadNum && i + pageNum <= numPages; i++) {
 	LoadPage(i + pageNum);
 }
 
