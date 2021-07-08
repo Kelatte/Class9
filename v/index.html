@@ -1,0 +1,31 @@
+<div id="player"></div>
+<script type="text/javascript" src="https://player.dogecloud.com/js/loader"></script>
+<script type="text/javascript">
+// ?videoId=0 
+/*我和我的玖班 53bf80acaa93971f
+聪聪 1c77852b08c39c35
+太鼓 0bab42e19b5d2b19
+VLOG c651fab82282e37d
+混剪 e57df69ec5c746d1
+上山岗 4a573f1e91d3852c
+
+*/
+var vcodeArr = ["53bf80acaa93971f","1c77852b08c39c35","0bab42e19b5d2b19","c651fab82282e37d","e57df69ec5c746d1","4a573f1e91d3852c"];
+
+function getId( url ) {
+        var re = new RegExp( url + "=([^\&]*)", "i" );
+        var a = re.exec( document.location.search );
+        if ( a == null )
+            return null;
+        return a[1];
+}
+
+var vcode = vcodeArr[getId("videoId")];
+
+var player = new DogePlayer({
+    container: document.getElementById('player'),
+    userId: 2613,
+    vcode: vcode,
+    autoPlay: false
+});
+</script>
