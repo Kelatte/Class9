@@ -2,15 +2,19 @@
 <script type="text/javascript" src="https://player.dogecloud.com/js/loader"></script>
 <script type="text/javascript">
 // ?videoId=0 
-/*我和我的玖班 53bf80acaa93971f
-聪聪 1c77852b08c39c35
-太鼓 0bab42e19b5d2b19
-VLOG c651fab82282e37d
-混剪 e57df69ec5c746d1
-上山岗 4a573f1e91d3852c
+/*我和我的九班 53bf80acaa93971f  0
+给聪聪过生日 1c77852b08c39c35  1
+太鼓达人 0bab42e19b5d2b19  2
+三 连 冠 0099d81ccc671fc2  3
+//毕业VLOG c651fab82282e37d 不放在里面
+湖中沙雕故事鉴赏 https://space.bilibili.com/431449184/channel/detail?cid=109162 4
+毕业混剪 e57df69ec5c746d1  5
+上山岗 4a573f1e91d3852c  6
 
 */
-var vcodeArr = ["53bf80acaa93971f","1c77852b08c39c35","0bab42e19b5d2b19","c651fab82282e37d","e57df69ec5c746d1","4a573f1e91d3852c"];
+var nameArr = ["我和我的九班 By:xyk","给聪聪过生日 By:xyk","太鼓达人 By:dyy","三 连 冠 By:sz","","毕业混剪 By:syd","上山岗 By:wy"];
+var vcodeArr = ["53bf80acaa93971f","1c77852b08c39c35","0bab42e19b5d2b19","0099d81ccc671fc2","",
+    "e57df69ec5c746d1","4a573f1e91d3852c"];
 
 function getId( url ) {
         var re = new RegExp( url + "=([^\&]*)", "i" );
@@ -20,7 +24,11 @@ function getId( url ) {
         return a[1];
 }
 
-var vcode = vcodeArr[getId("videoId")];
+var videoId = getId("videoId");
+if (videoId == 4){
+    window.location.href='//space.bilibili.com/431449184/channel/detail?cid=109162';
+}
+var vcode = vcodeArr[videoId];
 
 var player = new DogePlayer({
     container: document.getElementById('player'),
@@ -28,4 +36,7 @@ var player = new DogePlayer({
     vcode: vcode,
     autoPlay: false
 });
+
+document.title=nameArr[videoId];
+
 </script>
